@@ -9,9 +9,7 @@
         body {
             font-family: 'Lucida Console', Monaco, monospace;
             background-color: #2a2a2a;
-            /* Dark gray background */
             color: #d3d3d3;
-            /* Light gray text */
             text-align: center;
             margin: 0;
             padding: 20px;
@@ -20,7 +18,6 @@
         .grid-container {
             display: grid;
             grid-template-columns: repeat(15, 1fr);
-            /* 15 columns */
             gap: 20px;
             justify-items: center;
             margin: 20px 0;
@@ -32,15 +29,10 @@
 
         .grid-item img {
             width: 75px;
-            /* Reduced size by 25% */
             height: 75px;
-            /* Reduced size by 25% */
             object-fit: contain;
-            /* Maintain aspect ratio */
             border: 3px solid #b0b0b0;
-            /* Medium gray border */
             border-radius: 10px;
-            /* Rounded corners */
             transition: transform 0.3s ease;
         }
 
@@ -48,7 +40,6 @@
             transform: scale(1.1);
         }
 
-        /* Show link URL as tooltip on hover */
         a {
             text-decoration: none;
             color: #007acc;
@@ -59,24 +50,14 @@
             color: #005a8b;
         }
 
-        a[title] {
-            cursor: pointer;
-        }
-
         form {
             margin-bottom: 20px;
             margin-top: 1cm;
-            /* Move down by 1 cm */
             border: 2px solid #b0b0b0;
-            /* Border around search box */
             padding: 20px;
-            /* Padding inside the form border */
             border-radius: 10px;
-            /* Rounded corners */
-            display: inline-block;
             display: flex;
             align-items: center;
-            /* Align items vertically */
             justify-content: center;
         }
 
@@ -85,15 +66,13 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 90%;
-            /* Make search box wider */
-            max-width: 1200px;
+            width: 80%;
+            max-width: 900px;
             margin-left: 10px;
         }
 
         .google-logo {
             width: 50px;
-            /* Adjust size of Google logo */
             height: auto;
         }
     </style>
@@ -126,6 +105,7 @@
             </a>
         </li>
     </ul>
+
     <ul class="grid-container">
         <li class="grid-item">
             <a href="https://www.linkedin.com/in/diegogerwig" target="_blank"
@@ -135,6 +115,46 @@
             </a>
         </li>
     </ul>
+
+    <ul class="grid-container">
+        <li class="grid-item">
+            <a href="https://duolingo.com" target="_blank" title="https://duolingo.com">
+                <img src="https://via.placeholder.com/150?text=DUOLINGO" alt="DUOLINGO">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://www.bussu.com" target="_blank" title="https://www.bussu.com">
+                <img src="https://via.placeholder.com/150?text=BUSSU" alt="BUSSU">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://santanderopenacademy.com" target="_blank" title="https://santanderopenacademy.com">
+                <img src="https://via.placeholder.com/150?text=SANTANDER+OPEN+ACADEMY" alt="Santander Open Academy">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://www.kaggle.com" target="_blank" title="https://www.kaggle.com">
+                <img src="https://via.placeholder.com/150?text=KAGGLE" alt="Kaggle">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://www.udemy.com" target="_blank" title="https://www.udemy.com">
+                <img src="https://via.placeholder.com/150?text=UDEMY" alt="Udemy">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://qworld.net/qclass24-25/" target="_blank" title="https://qworld.net/qclass24-25/">
+                <img src="https://via.placeholder.com/150?text=QWorld" alt="QWorld">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://www.cloudskillsboost.google/" target="_blank" title="https://www.cloudskillsboost.google/">
+                <img src="https://via.placeholder.com/150?text=Google+Cloud+Skills+Boost"
+                    alt="Google Cloud Skills Boost">
+            </a>
+        </li>
+    </ul>
+
 </body>
 
 </html>
