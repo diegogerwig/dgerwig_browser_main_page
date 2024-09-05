@@ -74,6 +74,10 @@
             border-radius: 10px;
             /* Rounded corners */
             display: inline-block;
+            display: flex;
+            align-items: center;
+            /* Align items vertically */
+            justify-content: center;
         }
 
         input[type="text"] {
@@ -81,16 +85,25 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 150%;
+            width: 90%;
             /* Make search box wider */
-            max-width: 700px;
+            max-width: 1200px;
+            margin-left: 10px;
+        }
+
+        .google-logo {
+            width: 50px;
+            /* Adjust size of Google logo */
+            height: auto;
         }
     </style>
 </head>
 
 <body>
-    <!-- Google search box without button -->
+    <!-- Google search box with logo to the left -->
     <form action="https://www.google.com/search" method="get">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
+            alt="Google" class="google-logo">
         <input type="text" name="q" placeholder="Search on Google...">
     </form>
 
@@ -117,7 +130,8 @@
         <li class="grid-item">
             <a href="https://www.linkedin.com/in/diegogerwig" target="_blank"
                 title="https://www.linkedin.com/in/diegogerwig">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                    alt="LinkedIn">
             </a>
         </li>
     </ul>
