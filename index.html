@@ -48,10 +48,19 @@
             transform: scale(1.1);
         }
 
+        /* Show link URL as tooltip on hover */
         a {
             text-decoration: none;
             color: #007acc;
             font-weight: bold;
+        }
+
+        a:hover {
+            color: #005a8b;
+        }
+
+        a[title] {
+            cursor: pointer;
         }
 
         form {
@@ -72,8 +81,9 @@
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 80%;
-            max-width: 500px;
+            width: 90%;
+            /* Make search box wider */
+            max-width: 700px;
         }
     </style>
 </head>
@@ -87,26 +97,27 @@
     <!-- Grid container for favorite websites -->
     <ul class="grid-container">
         <li class="grid-item">
-            <a href="https://www.google.com" target="_blank">
+            <a href="https://www.google.com" target="_blank" title="https://www.google.com">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
                     alt="Google">
             </a>
         </li>
         <li class="grid-item">
-            <a href="https://www.github.com/diegogerwig" target="_blank">
+            <a href="https://www.github.com/diegogerwig" target="_blank" title="https://www.github.com/diegogerwig">
                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
             </a>
         </li>
         <li class="grid-item">
-            <a href="https://profile.intra.42.fr/" target="_blank">
+            <a href="https://profile.intra.42.fr/" target="_blank" title="https://profile.intra.42.fr/">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/42_Logo.svg" alt="42">
             </a>
         </li>
-        <!-- New LinkedIn logo in the second row -->
+    </ul>
+    <ul class="grid-container">
         <li class="grid-item">
-            <a href="https://www.linkedin.com/in/diegogerwig" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                    alt="LinkedIn">
+            <a href="https://www.linkedin.com/in/diegogerwig" target="_blank"
+                title="https://www.linkedin.com/in/diegogerwig">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
             </a>
         </li>
     </ul>
