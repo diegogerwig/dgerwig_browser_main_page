@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Webs Favoritas</title>
+    <title>My Favorite Websites</title>
     <style>
         body {
             font-family: 'Lucida Console', Monaco, monospace;
-            /* Fuente Lucida Console */
+            /* Font: Lucida Console */
             background-color: #2a2a2a;
-            /* Fondo gris oscuro */
+            /* Dark gray background */
             color: #d3d3d3;
-            /* Texto en gris claro */
+            /* Light gray text */
             text-align: center;
             margin: 0;
             padding: 20px;
@@ -20,13 +20,13 @@
 
         h1 {
             color: #d3d3d3;
-            /* Título en gris claro */
+            /* Light gray title */
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(10, 1fr);
-            /* columnas */
+            /* Columns */
             gap: 20px;
             justify-items: center;
             margin: 20px 0;
@@ -38,25 +38,31 @@
 
         .grid-item img {
             width: 100px;
-            /* Ajusta el tamaño de los logos */
-            height: auto;
+            height: 100px;
+            /* Ensures square shape */
+            object-fit: contain;
+            /* Maintains aspect ratio */
+            border: 3px solid #b0b0b0;
+            /* Medium gray border */
+            border-radius: 10px;
+            /* Rounded corners */
             transition: transform 0.3s ease;
         }
 
         .grid-item img:hover {
             transform: scale(1.1);
-            /* Efecto hover en el logo */
         }
 
         a {
             text-decoration: none;
             color: #007acc;
-            /* Color de los enlaces */
             font-weight: bold;
         }
 
         form {
             margin-bottom: 20px;
+            margin-top: 1cm;
+            /* Moves the form down by 1 cm */
         }
 
         input[type="text"] {
@@ -85,15 +91,15 @@
 </head>
 
 <body>
-    <!-- Cuadro de búsqueda de Google -->
+    <!-- Google search box -->
     <form action="https://www.google.com/search" method="get">
-        <input type="text" name="q" placeholder="Buscar en Google...">
-        <input type="submit" value="Buscar">
+        <input type="text" name="q" placeholder="Search on Google...">
+        <input type="submit" value="Search">
     </form>
 
-    <h1>Mis Webs Favoritas</h1>
+    <h1>My Favorite Websites</h1>
 
-    <!-- Contenedor de la cuadrícula -->
+    <!-- Grid container for favorite websites -->
     <ul class="grid-container">
         <li class="grid-item">
             <a href="https://www.google.com" target="_blank">
@@ -108,10 +114,10 @@
         </li>
         <li class="grid-item">
             <a href="https://profile.intra.42.fr/" target="_blank">
-                <img src="https://en.wikipedia.org/wiki/42_(school)#/media/File:42_Logo.svg" alt="42">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/42_Logo.svg" alt="42">
             </a>
         </li>
-        <!-- Puedes agregar más elementos aquí -->
+        <!-- Add more grid items here -->
     </ul>
 </body>
 
