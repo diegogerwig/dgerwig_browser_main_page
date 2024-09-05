@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,34 +14,101 @@
             margin: 0;
             padding: 20px;
         }
+
         h1 {
             color: #007acc;
         }
-        ul {
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 columnas */
+            gap: 20px;
+            justify-items: center;
+            margin: 20px 0;
+        }
+
+        .grid-item {
             list-style-type: none;
-            padding: 0;
         }
-        li {
-            margin: 10px 0;
+
+        .grid-item img {
+            width: 100px;
+            /* Ajusta el tamaño de los logos */
+            height: auto;
+            transition: transform 0.3s ease;
         }
+
+        .grid-item img:hover {
+            transform: scale(1.1);
+            /* Efecto hover en el logo */
+        }
+
         a {
             text-decoration: none;
             color: #007acc;
             font-weight: bold;
         }
-        a:hover {
-            color: #005a8b;
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #005a8b;
         }
     </style>
 </head>
+
 <body>
+    <!-- Cuadro de búsqueda de Google -->
+    <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder="Buscar en Google...">
+        <input type="submit" value="Buscar">
+    </form>
+
     <h1>Mis Webs Favoritas</h1>
-    <ul>
-        <li><a href="https://www.google.com" target="_blank">Google</a></li>
-        <li><a href="https://www.github.com" target="_blank">GitHub</a></li>
-        <li><a href="https://www.stackoverflow.com" target="_blank">Stack Overflow</a></li>
-        <li><a href="https://www.reddit.com" target="_blank">Reddit</a></li>
-        <!-- Agrega más enlaces a tus webs favoritas aquí -->
+
+    <!-- Contenedor de la cuadrícula -->
+    <ul class="grid-container">
+        <li class="grid-item">
+            <a href="https://www.google.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
+                    alt="Google">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://www.github.com/diegogerwig" target="_blank">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+            </a>
+        </li>
+        <li class="grid-item">
+            <a href="https://profile.intra.42.fr/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/42_Logo.svg/512px-42_Logo.svg.png"
+                    alt="42">
+            </a>
+        </li>
+        <!-- Puedes agregar más elementos aquí -->
     </ul>
 </body>
+
 </html>
