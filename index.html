@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Favorite Websites</title>
+    <title>Favorite Websites</title>
     <style>
         body {
             font-family: 'Lucida Console', Monaco, monospace;
-            /* Font: Lucida Console */
             background-color: #2a2a2a;
             /* Dark gray background */
             color: #d3d3d3;
@@ -18,15 +17,10 @@
             padding: 20px;
         }
 
-        h1 {
-            color: #d3d3d3;
-            /* Light gray title */
-        }
-
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            /* Columns */
+            grid-template-columns: repeat(12, 1fr);
+            /* 12 columns */
             gap: 20px;
             justify-items: center;
             margin: 20px 0;
@@ -37,11 +31,12 @@
         }
 
         .grid-item img {
-            width: 100px;
-            height: 100px;
-            /* Ensures square shape */
+            width: 75px;
+            /* Reduced size by 25% */
+            height: 75px;
+            /* Reduced size by 25% */
             object-fit: contain;
-            /* Maintains aspect ratio */
+            /* Maintain aspect ratio */
             border: 3px solid #b0b0b0;
             /* Medium gray border */
             border-radius: 10px;
@@ -62,7 +57,14 @@
         form {
             margin-bottom: 20px;
             margin-top: 1cm;
-            /* Moves the form down by 1 cm */
+            /* Move down by 1 cm */
+            border: 2px solid #b0b0b0;
+            /* Border around search box */
+            padding: 20px;
+            /* Padding inside the form border */
+            border-radius: 10px;
+            /* Rounded corners */
+            display: inline-block;
         }
 
         input[type="text"] {
@@ -91,13 +93,11 @@
 </head>
 
 <body>
-    <!-- Google search box -->
+    <!-- Google search box with border -->
     <form action="https://www.google.com/search" method="get">
         <input type="text" name="q" placeholder="Search on Google...">
         <input type="submit" value="Search">
     </form>
-
-    <h1>My Favorite Websites</h1>
 
     <!-- Grid container for favorite websites -->
     <ul class="grid-container">
