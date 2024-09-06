@@ -227,9 +227,10 @@
     </script>
 
     <h3>Daily Tasks</h3>
-    <input type="checkbox" id="task1" onchange="updateTasks()"> 🇬🇧 DUOLINGO
-    <input type="checkbox" id="task2" onchange="updateTasks()"> 🇬🇧 BUSUU
+    <input type="checkbox" id="task1" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/inglaterra" title="inglaterra "> DUOLINGO</a>
+    <input type="checkbox" id="task2" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/inglaterra" title="inglaterra "> BUSUU</a>
     <input type="checkbox" id="task3" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/espana" title="españa "> NEW</a>
+    <input type="checkbox" id="task4" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/alemania" title="alemania"> NEW+1</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -246,7 +247,8 @@
             const tasks = [
                 { id: 'task1', completed: document.getElementById('task1').checked },
                 { id: 'task2', completed: document.getElementById('task2').checked },
-                { id: 'task3', completed: document.getElementById('task3').checked }
+                { id: 'task3', completed: document.getElementById('task3').checked },
+                { id: 'task4', completed: document.getElementById('task4').checked },
             ];
             localStorage.setItem('tasks', JSON.stringify(tasks));
             exportToFile();
