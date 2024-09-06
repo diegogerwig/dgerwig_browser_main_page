@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dgerwig page</title>
-    <link rel="icon" href="img/monkeyface.ico"
-        type="image/x-icon">
+    <link rel="icon" href="img/monkeyface.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Lucida Console', Monaco, monospace;
@@ -77,10 +76,20 @@
             margin-left: 10px;
         }
 
-        .google-logo, .contact-logo, .drive-logo, .photos-logo {
+        .google-logo,
+        .contact-logo,
+        .drive-logo,
+        .photos-logo {
             width: auto;
             height: 20px;
             margin-left: 10px;
+        }
+
+        .date-time {
+            margin-top: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            color: #d3d3d3;
         }
     </style>
 </head>
@@ -88,23 +97,21 @@
 <body>
     <form action="https://www.google.com/search" method="get">
         <a href="https://www.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
-                alt="Google" class="google-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" alt="Google" class="google-logo">
         </a>
         <input type="text" name="q" placeholder=" 🔎 Search on Google...">
         <a href="https://contacts.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Google_Contacts_icon_%282022%29.svg"
-                alt="Google Contacts" class="contact-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Google_Contacts_icon_%282022%29.svg" alt="Google Contacts" class="contact-logo">
         </a>
         <a href="https://drive.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg"
-                alt="Google Drive" class="drive-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Google Drive" class="drive-logo">
         </a>
         <a href="https://photos.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Photos_icon_%282020%29.svg"
-                alt="Google Photos" class="photos-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Photos_icon_%282020%29.svg" alt="Google Photos" class="photos-logo">
         </a>
     </form>
+
+    <div class="date-time" id="date-time"></div>
 
     <ul class="grid-container">
         <li class="grid-item">
@@ -121,10 +128,8 @@
 
     <ul class="grid-container">
         <li class="grid-item">
-            <a href="https://www.linkedin.com/in/diegogerwig" target="_blank"
-                title="https://www.linkedin.com/in/diegogerwig">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-                    alt="LinkedIn">
+            <a href="https://www.linkedin.com/in/diegogerwig" target="_blank" title="https://www.linkedin.com/in/diegogerwig">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
             </a>
         </li>
     </ul>
@@ -162,11 +167,116 @@
         </li>
         <li class="grid-item">
             <a href="https://www.cloudskillsboost.google/" target="_blank" title="https://www.cloudskillsboost.google/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdhJxlvj_9YtkQgBl3dVFOD2VtJt1qLuDCw&s"
-                    alt="Google Cloud Skills Boost">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdhJxlvj_9YtkQgBl3dVFOD2VtJt1qLuDCw&s" alt="Google Cloud Skills Boost">
             </a>
         </li>
     </ul>
+
+    <script>
+        function formatDateTime() {
+            const days = ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO'];
+            const months = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+            const now = new Date();
+            const day = days[now.getDay()];
+            const year = now.getFullYear();
+            const month = months[now.getMonth()];
+            const date = now.getDate().toString().padStart(2, '0');
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+
+            return `${day}   ${year}/${month}/${date}   ${hours}:${minutes}`;
+        }
+
+        document.getElementById('date-time').textContent = formatDateTime();
+        setInterval(() => {
+            document.getElementById('date-time').textContent = formatDateTime();
+        }, 60000);
+    </script>
+
+        <input type="checkbox" id="task1" onchange="updateTasks()"> Tarea 1
+    <input type="checkbox" id="task2" onchange="updateTasks()"> Tarea 2
+
+    <script>
+        // Cargar las tareas desde localStorage al iniciar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.forEach(task => {
+                const checkbox = document.getElementById(task.id);
+                if (checkbox) {
+                    checkbox.checked = task.completed;
+                }
+            });
+        });
+
+        // Guardar y exportar tareas al cambiar los checkboxes
+        function updateTasks() {
+            const tasks = [
+                { id: 'task1', completed: document.getElementById('task1').checked },
+                { id: 'task2', completed: document.getElementById('task2').checked }
+            ];
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            exportToFile();
+        }
+
+        // Exportar tareas antes de que el navegador se cierre
+        window.addEventListener('beforeunload', function (e) {
+            exportToFile();
+        });
+
+        // Función para exportar tareas a un archivo
+        function exportToFile() {
+            const tasks = localStorage.getItem('tasks') || '[]';
+            const blob = new Blob([tasks], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'tareas.json';
+            link.click();
+        }
+    </script>
+
+     <h1>Task List</h1>
+    <ul>
+        <li><input type="checkbox" id="task1" onchange="updateTasks()"> Tarea 1</li>
+        <li><input type="checkbox" id="task2" onchange="updateTasks()"> Tarea 2</li>
+    </ul>
+
+    <script>
+        // Load tasks from localStorage on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            tasks.forEach(task => {
+                const checkbox = document.getElementById(task.id);
+                if (checkbox) {
+                    checkbox.checked = task.completed;
+                }
+            });
+        });
+
+        // Save tasks and export on checkbox change
+        function updateTasks() {
+            const tasks = [
+                { id: 'task1', completed: document.getElementById('task1').checked },
+                { id: 'task2', completed: document.getElementById('task2').checked }
+            ];
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+            exportToFile();
+        }
+
+        // Export tasks when the browser is about to close
+        window.addEventListener('beforeunload', function (e) {
+            exportToFile();
+        });
+
+        // Function to export tasks to a JSON file
+        function exportToFile() {
+            const tasks = localStorage.getItem('tasks') || '[]';
+            const blob = new Blob([tasks], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'sync_tasks.json';
+            link.click();
+        }
+    </script>
 
 </body>
 
