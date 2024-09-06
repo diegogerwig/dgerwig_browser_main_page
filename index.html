@@ -193,7 +193,6 @@
 
 
     <script>
-        // Cargar las tareas desde localStorage al iniciar la página
         document.addEventListener('DOMContentLoaded', function () {
             const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
             tasks.forEach(task => {
@@ -204,7 +203,6 @@
             });
         });
 
-        // Guardar y exportar tareas al cambiar los checkboxes
         function updateTasks() {
             const tasks = [
                 { id: 'task1', completed: document.getElementById('task1').checked },
@@ -214,12 +212,10 @@
             exportToFile();
         }
 
-        // Exportar tareas antes de que el navegador se cierre
         window.addEventListener('beforeunload', function (e) {
             exportToFile();
         });
 
-        // Función para exportar tareas a un archivo
         function exportToFile() {
             const tasks = localStorage.getItem('tasks') || '[]';
             const blob = new Blob([tasks], { type: 'application/json' });
@@ -231,13 +227,11 @@
     </script>
 
     <h3>Daily Tasks</h3>
-    <input type="checkbox" id="task1" onchange="updateTasks()"> DUOLINGO
-    <input type="checkbox" id="task2" onchange="updateTasks()"> BUSUU
-    <input type="checkbox" id="task3" onchange="updateTasks()"> NEW
-
+    <input type="checkbox" id="task1" onchange="updateTasks()"> 🇬🇧 DUOLINGO
+    <input type="checkbox" id="task2" onchange="updateTasks()"> 🇬🇧 BUSUU
+    <input type="checkbox" id="task3" onchange="updateTasks()"> 🇩🇪 NEW
 
     <script>
-        // Load tasks from localStorage on page load
         document.addEventListener('DOMContentLoaded', function () {
             const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
             tasks.forEach(task => {
@@ -248,7 +242,6 @@
             });
         });
 
-        // Save tasks and export on checkbox change
         function updateTasks() {
             const tasks = [
                 { id: 'task1', completed: document.getElementById('task1').checked },
@@ -259,12 +252,10 @@
             exportToFile();
         }
 
-        // Export tasks when the browser is about to close
         window.addEventListener('beforeunload', function (e) {
             exportToFile();
         });
 
-        // Function to export tasks to a JSON file
         function exportToFile() {
             const tasks = localStorage.getItem('tasks') || '[]';
             const blob = new Blob([tasks], { type: 'application/json' });
