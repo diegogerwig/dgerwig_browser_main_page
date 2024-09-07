@@ -11,9 +11,23 @@
             font-family: 'Lucida Console', Monaco, monospace;
             background-color: #2a2a2a;
             color: #d3d3d3;
-            text-align: center;
             margin: 0;
             padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-content {
+            width: 75%;
+        }
+
+        .tasks-column {
+            width: 20%;
+            padding-left: 20px;
+            border-left: 2px solid #b0b0b0;
         }
 
         .grid-container {
@@ -93,189 +107,127 @@
             font-size: 25px;
             font-weight: bold;
             color: #d3d3d3;
+            text-align: center;
+        }
+
+        .tasks-column h3 {
+            text-align: left;
+        }
+
+        .tasks-column input {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 
 <body>
-    <form action="https://www.google.com/search" method="get">
-        <a href="https://www.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="google-logo">
-        </a>
-        <input type="text" name="q" placeholder=" 🔎 Search on Google...">
-        <a href="https://contacts.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Google_Contacts_icon_%282022%29.svg" alt="Google Contacts" class="google-logo">
-        </a>
-        <a href="https://drive.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Google Drive" class="google-logo">
-        </a>
-        <a href="https://photos.google.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Photos_icon_%282020%29.svg" alt="Google Photos" class="google-logo">
-        </a>
-    </form>
+    <div class="container">
+        <div class="main-content">
+            <form action="https://www.google.com/search" method="get">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="google-logo">
+                </a>
+                <input type="text" name="q" placeholder=" 🔎 Search on Google...">
+                <a href="https://contacts.google.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Google_Contacts_icon_%282022%29.svg" alt="Google Contacts" class="google-logo">
+                </a>
+                <a href="https://drive.google.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" alt="Google Drive" class="google-logo">
+                </a>
+                <a href="https://photos.google.com" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Photos_icon_%282020%29.svg" alt="Google Photos" class="google-logo">
+                </a>
+            </form>
 
-    <div class="date-time" id="date-time"></div>
+            <div class="date-time" id="date-time"></div>
 
-    <ul class="grid-container">
-        <li class="grid-item">
-            <a href="https://www.github.com/diegogerwig" target="_blank" title="https://www.github.com/diegogerwig">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
-            </a>
-        </li>
-        <li class="grid-item">
-            <a href="https://profile.intra.42.fr/" target="_blank" title="https://profile.intra.42.fr/">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/42_Logo.svg" alt="42">
-            </a>
-        </li>
-    </ul>
+            <ul class="grid-container">
+                <li class="grid-item">
+                    <a href="https://www.github.com/diegogerwig" target="_blank" title="https://www.github.com/diegogerwig">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+                    </a>
+                </li>
+                <li class="grid-item">
+                    <a href="https://profile.intra.42.fr/" target="_blank" title="https://profile.intra.42.fr/">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/42_Logo.svg" alt="42">
+                    </a>
+                </li>
+            </ul>
 
-    <ul class="grid-container">
-        <li class="grid-item">
-            <a href="https://www.linkedin.com/in/diegogerwig" target="_blank" title="https://www.linkedin.com/in/diegogerwig">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
-            </a>
-        </li>
-    </ul>
+            <ul class="grid-container">
+                <li class="grid-item">
+                    <a href="https://www.linkedin.com/in/diegogerwig" target="_blank" title="https://www.linkedin.com/in/diegogerwig">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
+                    </a>
+                </li>
+            </ul>
 
-    <ul class="grid-container">
-        <li class="grid-item">
-            <a href="https://duolingo.com" target="_blank" title="https://duolingo.com">
-                <img src="https://cdn.worldvectorlogo.com/logos/duolingo-1.svg" alt="DUOLINGO">
-            </a>
-        </li>
-        <li class="grid-item">
-            <a href="https://www.bussu.com" target="_blank" title="https://www.bussu.com">
-                <img src="https://cdn-images-1.medium.com/max/1200/1*1p2lBlNajD2ktkOo21CHiw.png" alt="BUSSU">
-            </a>
-        </li>
-        <li class="grid-item">
-            <a href="https://santanderopenacademy.com" target="_blank" title="https://santanderopenacademy.com">
-                <img src="https://ugc.production.linktr.ee/db834bef-f099-408f-b094-9befa4cc528c_avatar-SAN-OpenAcademy-POS-1080x1080.png" alt="Santander Open Academy">
-            </a>
-        </li>
-        <li class="grid-item">
-            <a href="https://www.kaggle.com" target="_blank" title="https://www.kaggle.com">
-                <img src="https://w7.pngwing.com/pngs/423/280/png-transparent-kaggle-logo-logos-logos-and-brands-icon.png" alt="Kaggle">
-            </a>
-        </li>
-        <li class="grid-item">
-            <a href="https://www.udemy.com" target="_blank" title="https://www.udemy.com">
-                <img src="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Emblem.png" alt="Udemy">
-            </a>
-        </li>
-        <li class="grid-item">
-            <a href="https://qworld.net/qclass24-25/" target="_blank" title="https://qworld.net/qclass24-25/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtndWnEpNBPqLkovlT8sZm2om0S5C-CNP4Q&s" alt="QWorld">
-            </a>
-        </li>
-        <li class="grid-item">
-            <a href="https://www.cloudskillsboost.google/" target="_blank" title="https://www.cloudskillsboost.google/">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdhJxlvj_9YtkQgBl3dVFOD2VtJt1qLuDCw&s" alt="Google Cloud Skills Boost">
-            </a>
-        </li>
-    </ul>
+            <ul class="grid-container">
+                <li class="grid-item">
+                    <a href="https://duolingo.com" target="_blank" title="https://duolingo.com">
+                        <img src="https://cdn.worldvectorlogo.com/logos/duolingo-1.svg" alt="DUOLINGO">
+                    </a>
+                </li>
+                <li class="grid-item">
+                    <a href="https://www.bussu.com" target="_blank" title="https://www.bussu.com">
+                        <img src="https://cdn-images-1.medium.com/max/1200/1*1p2lBlNajD2ktkOo21CHiw.png" alt="BUSSU">
+                    </a>
+                </li>
+                <li class="grid-item">
+                    <a href="https://santanderopenacademy.com" target="_blank" title="https://santanderopenacademy.com">
+                        <img src="https://ugc.production.linktr.ee/db834bef-f099-408f-b094-9befa4cc528c_avatar-SAN-OpenAcademy-POS-1080x1080.png" alt="Santander Open Academy">
+                    </a>
+                </li>
+                <li class="grid-item">
+                    <a href="https://www.kaggle.com" target="_blank" title="https://www.kaggle.com">
+                        <img src="https://w7.pngwing.com/pngs/423/280/png-transparent-kaggle-logo-logos-logos-and-brands-icon.png" alt="Kaggle">
+                    </a>
+                </li>
+                <li class="grid-item">
+                    <a href="https://www.udemy.com" target="_blank" title="https://www.udemy.com">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/11/Udemy-Emblem.png" alt="Udemy">
+                    </a>
+                </li>
+                <li class="grid-item">
+                    <a href="https://qworld.net/qclass24-25/" target="_blank" title="https://qworld.net/qclass24-25/">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNtndWnEpNBPqLkovlT8sZm2om0S5C-CNP4Q&s" alt="QWorld">
+                    </a>
+                </li>
+                <li class="grid-item">
+                    <a href="https://www.cloudskillsboost.google/" target="_blank" title="https://www.cloudskillsboost.google/">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTdhJxlvj_9YtkQgBl3dVFOD2VtJt1qLuDCw&s" alt="Google Cloud Skills Boost">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tasks-column">
+            <h3>Daily Tasks</h3>
+            <input type="checkbox" id="task1" onchange="updateTasks()"> <a><img src="https://flagcdn.com/16x12/gb.png" class="flag-icon"> DUOLINGO</a><br>
+            <input type="checkbox" id="task2" onchange="updateTasks()"> <a><img src="https://flagcdn.com/16x12/gb.png" class="flag-icon"> BUSUU</a><br>
+            <input type="checkbox" id="task3" onchange="updateTasks()"> <a><img src="https://flagcdn.com/16x12/de.png" class="flag-icon"> DROPS</a><br>
+            <input type="checkbox" id="task4" onchange="updateTasks()"> <a><img src="https://flagcdn.com/16x12/es.png" class="flag-icon"> Pruebas</a><br>
+        </div>
+    </div>                 
 
     <script>
-        function formatDateTime() {
-            const days = ['DOMINGO', 'LUNES', 'MARTES', 'MIÉRCOLES', 'JUEVES', 'VIERNES', 'SÁBADO'];
-            const months = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+        function updateTasks() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+
+            if (allChecked) {
+                alert("You have completed all your tasks for today!");
+            }
+        }
+
+        function updateDateTime() {
             const now = new Date();
-            const day = days[now.getDay()];
-            const year = now.getFullYear();
-            const month = months[now.getMonth()];
-            const date = now.getDate().toString().padStart(2, '0');
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-
-            return `${day}   ${year}/${month}/${date}   ${hours}:${minutes}`;
+            const dateTimeElement = document.getElementById("date-time");
+            dateTimeElement.textContent = now.toLocaleString();
         }
 
-        document.getElementById('date-time').textContent = formatDateTime();
-        setInterval(() => {
-            document.getElementById('date-time').textContent = formatDateTime();
-        }, 60000);
+        setInterval(updateDateTime, 1000);
     </script>
-
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.forEach(task => {
-                const checkbox = document.getElementById(task.id);
-                if (checkbox) {
-                    checkbox.checked = task.completed;
-                }
-            });
-        });
-
-        function updateTasks() {
-            const tasks = [
-                { id: 'task1', completed: document.getElementById('task1').checked },
-                { id: 'task2', completed: document.getElementById('task2').checked },
-                { id: 'task3', completed: document.getElementById('task3').checked },
-                { id: 'task4', completed: document.getElementById('task4').checked },
-            ];
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-            exportToFile();
-        }
-
-        window.addEventListener('beforeunload', function (e) {
-            exportToFile();
-        });
-
-        function exportToFile() {
-            const tasks = localStorage.getItem('tasks') || '[]';
-            const blob = new Blob([tasks], { type: 'application/json' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'tareas.json';
-            link.click();
-        }
-    </script>
-
-    <h3>Daily Tasks</h3>
-    <input type="checkbox" id="task1" onchange="updateTasks()"> <a> <img src="https://flagcdn.com/16x12/gb-eng.png" class="flag-icon"> DUOLINGO</a>
-    <input type="checkbox" id="task2" onchange="updateTasks()"> <a> <img src="https://flagcdn.com/16x12/gb-eng.png" class="flag-icon"> BUSUU</a>
-    <input type="checkbox" id="task3" onchange="updateTasks()"> <a> <img src="https://flagcdn.com/16x12/es.png" class="flag-icon"> NEW</a>
-    <input type="checkbox" id="task4" onchange="updateTasks()"> <a> <img src="https://flagcdn.com/16x12/de.png" class="flag-icon"> NEW2</a>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-            tasks.forEach(task => {
-                const checkbox = document.getElementById(task.id);
-                if (checkbox) {
-                    checkbox.checked = task.completed;
-                }
-            });
-        });
-
-        function updateTasks() {
-            const tasks = [
-                { id: 'task1', completed: document.getElementById('task1').checked },
-                { id: 'task2', completed: document.getElementById('task2').checked },
-                { id: 'task3', completed: document.getElementById('task3').checked },
-                { id: 'task4', completed: document.getElementById('task4').checked },
-            ];
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-            exportToFile();
-        }
-
-        window.addEventListener('beforeunload', function (e) {
-            exportToFile();
-        });
-
-        function exportToFile() {
-            const tasks = localStorage.getItem('tasks') || '[]';
-            const blob = new Blob([tasks], { type: 'application/json' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'sync_tasks.json';
-            link.click();
-        }
-    </script>
-
 </body>
 
 </html>
