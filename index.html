@@ -111,6 +111,19 @@
             text-align: center;
         }
 
+        .weather-widget {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #b0b0b0;
+            border-radius: 10px;
+            background-color: #333;
+            color: #d3d3d3;
+            max-width: 300px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .tasks-column h3 {
             text-align: left;
         }
@@ -124,7 +137,6 @@
             border-top: 3px double #b0b0b0;
             margin: 0px 0;
         }
-
     </style>
 </head>
 
@@ -148,6 +160,11 @@
             </form>
 
             <div class="date-time" id="date-time"></div>
+
+            <div class="weather-widget">
+                <h3>Meteorological Alerts</h3>
+                <div id="alerts-info">Loading alerts...</div>
+            </div>
 
             <ul class="grid-container">
                 <li class="grid-item">
@@ -220,23 +237,53 @@
             <input type="checkbox" id="task4" onchange="updateTasks()"> <a><img src="https://flagcdn.com/w20/es.png" class="flag-icon"> Pruebas</a><br>
             <hr>
         </div>
-    </div>                 
+    </div>
+
+    <script>
+        async function fetchAlerts() {
+            try {
+                const response = await fetch('path/to/alerts.json');  
+                const alerts = await response.json();
+
+                const alertsElement = document.getElementById('alerts-info');
+                if (alerts.length > 0) {
+                    let alertsHtml = '';
+                    alerts.forEach(alert => {
+                        alertsHtml += `
+                            <p><strong>Type:</strong> ${alert.type}</p>
+                            <p><strong>Area:</strong> ${alert.area}</p>
+                            <p><strong>Message:</strong> ${alert.message}</p>
+                            <hr>
+                        `;
+                    });
+                    alertsElement.innerHTML = alertsHtml;
+                } else {
+                    alertsElement.innerHTML = '<p>No current alerts.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching alerts:', error);
+                document.getElementById('alerts-info').innerHTML = '<p>Unable to fetch alerts.</p>';
+            }
+        }
+
+        fetchAlerts();
+    </script>
 
     <script>
         function updateTasks() {
             const tasks = document.querySelectorAll('.tasks-column input[type="checkbox"]');
             tasks.forEach(task => {
-            localStorage.setItem(task.id, task.checked);
+                localStorage.setItem(task.id, task.checked);
             });
         }
 
         function loadTasks() {
             const tasks = document.querySelectorAll('.tasks-column input[type="checkbox"]');
             tasks.forEach(task => {
-            const savedState = localStorage.getItem(task.id);
-            if (savedState !== null) {
-                task.checked = savedState === 'true';
-            }
+                const savedState = localStorage.getItem(task.id);
+                if (savedState !== null) {
+                    task.checked = savedState === 'true';
+                }
             });
         }
 
@@ -265,7 +312,6 @@
         setInterval(updateDateTime, 1000);
 
     </script>
-    
 </body>
 
 </html>
