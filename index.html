@@ -225,12 +225,30 @@
     <script>
         function updateTasks() {
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+            
+            const now = new Date();
+            const today = now.toISOString().split('T')[0]; // 'YYYY-MM-DD'
 
-            if (allChecked) {
-                alert("You have completed all your tasks for today!");
+            const savedState = localStorage.getItem('checkboxesState');
+            const savedDate = localStorage.getItem('checkboxesDate');
+
+            if (savedState && savedDate === today) {
+                const states = JSON.parse(savedState);
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.checked = states[index] || false;
+                });
+            } else {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+                localStorage.setItem('checkboxesDate', today); 
             }
+
+            const states = Array.from(checkboxes).map(cb => cb.checked);
+            localStorage.setItem('checkboxesState', JSON.stringify(states));
         }
+
+        window.onload = updateTasks;
 
         function updateDateTime() {
             const now = new Date();
