@@ -227,7 +227,7 @@
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
             
             const now = new Date();
-            const today = now.toISOString().split('T')[0]; // 'YYYY-MM-DD'
+            const today = now.toISOString().split('T')[0];
 
             const savedState = localStorage.getItem('checkboxesState');
             const savedDate = localStorage.getItem('checkboxesDate');
