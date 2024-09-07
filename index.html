@@ -224,31 +224,23 @@
 
     <script>
         function updateTasks() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            
-            const now = new Date();
-            const today = now.toISOString().split('T')[0];
-
-            const savedState = localStorage.getItem('checkboxesState');
-            const savedDate = localStorage.getItem('checkboxesDate');
-
-            if (savedState && savedDate === today) {
-                const states = JSON.parse(savedState);
-                checkboxes.forEach((checkbox, index) => {
-                    checkbox.checked = states[index] || false;
-                });
-            } else {
-                checkboxes.forEach(checkbox => {
-                    checkbox.checked = false;
-                });
-                localStorage.setItem('checkboxesDate', today); 
-            }
-
-            const states = Array.from(checkboxes).map(cb => cb.checked);
-            localStorage.setItem('checkboxesState', JSON.stringify(states));
+            const tasks = document.querySelectorAll('.tasks-column input[type="checkbox"]');
+            tasks.forEach(task => {
+            localStorage.setItem(task.id, task.checked);
+            });
         }
 
-        window.onload = updateTasks;
+        function loadTasks() {
+            const tasks = document.querySelectorAll('.tasks-column input[type="checkbox"]');
+            tasks.forEach(task => {
+            const savedState = localStorage.getItem(task.id);
+            if (savedState !== null) {
+                task.checked = savedState === 'true';
+            }
+            });
+        }
+
+        window.onload = loadTasks;
 
         function updateDateTime() {
             const now = new Date();
@@ -271,7 +263,9 @@
         }
 
         setInterval(updateDateTime, 1000);
+
     </script>
+    
 </body>
 
 </html>
