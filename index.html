@@ -82,6 +82,12 @@
             margin-left: 10px;
         }
 
+        .flag-icon {
+            width: auto;
+            height: 10px;
+            margin-left: 10px;
+        }
+
         .date-time {
             margin-top: 10px;
             font-size: 25px;
@@ -206,7 +212,9 @@
         function updateTasks() {
             const tasks = [
                 { id: 'task1', completed: document.getElementById('task1').checked },
-                { id: 'task2', completed: document.getElementById('task2').checked }
+                { id: 'task2', completed: document.getElementById('task2').checked },
+                { id: 'task3', completed: document.getElementById('task3').checked },
+                { id: 'task4', completed: document.getElementById('task4').checked },
             ];
             localStorage.setItem('tasks', JSON.stringify(tasks));
             exportToFile();
@@ -227,10 +235,11 @@
     </script>
 
     <h3>Daily Tasks</h3>
-    <input type="checkbox" id="task1" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/inglaterra" title="inglaterra "> DUOLINGO</a>
-    <input type="checkbox" id="task2" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/inglaterra" title="inglaterra "> BUSUU</a>
-    <input type="checkbox" id="task3" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/espana" title="españa "> NEW</a>
-    <input type="checkbox" id="task4" onchange="updateTasks()"> <a> <img src="https://img.freepik.com/vector-gratis/ilustracion-bandera-alemana_53876-27101.jpg?t=st=1725657948~exp=1725661548~hmac=80fe754206bcbbad654b15c23b7d51adef83b74bec04e4e3485c86e3600e0a68&w=2000"> NEW</a>
+    <input type="checkbox" id="task1" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/inglaterra" title="inglaterra "> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAElBMVEUAAAD/zgDdAADnAADaAAD/2AAtsSEoAAAA+ElEQVR4nO3QMQGAMAAEsYeCf8tIuI0pkZANAAAAAAAAAAAAAAAAAAAAgB8dwm6CoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKewh7CbsIipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUofMGTNC8HkSxoAAAAASUVORK5CYII=" class="flag-icon"> DUOLINGO</a>
+    <input type="checkbox" id="task2" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/inglaterra" title="inglaterra "> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASIAAACuCAMAAAClZfCTAAAAElBMVEUAAAD/zgDdAADnAADaAAD/2AAtsSEoAAAA+ElEQVR4nO3QMQGAMAAEsYeCf8tIuI0pkZANAAAAAAAAAAAAAAAAAAAAgB8dwm6CoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKewh7CbsIipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUqKkqKkKClKipKipCgpSoqSoqQoKUofMGTNC8HkSxoAAAAASUVORK5CYII=" class="flag-icon"> BUSUU</a>
+    <input type="checkbox" id="task3" onchange="updateTasks()"> <a href="https://www.flaticon.es/iconos-gratis/espana" class="flag-icon"> NEW</a>
+    <input type="checkbox" id="task4" onchange="updateTasks()"> <a> <img src="https://www.flaticon.es/iconos-gratis/alemania" class="flag-icon"> NEW</a>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
