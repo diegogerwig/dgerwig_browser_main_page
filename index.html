@@ -136,7 +136,7 @@
             text-align: center;
             margin-left: auto;
             margin-right: auto;
-            font-size: 16px; /* Ajustar si deseas cambiar el tamaño del texto */
+            font-size: 16px;
         }
 
         .widget h3 {
@@ -360,7 +360,6 @@
                 discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
                 scope: "https://www.googleapis.com/auth/calendar.readonly",
             }).then(function () {
-                // Autenticar
                 gapi.auth2.getAuthInstance().signIn().then(listUpcomingEvents);
             });
         }
